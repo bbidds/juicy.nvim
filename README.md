@@ -16,18 +16,44 @@ use 'bbidds/juicy.nvim'
 With [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
-{
+  {
     'bbidds/juicy.nvim',
-    branch = 'main',
+    priority = 1000,
     lazy = false,
-    priority = 999,
     dependencies = {
-        'dgox16/devicon-colorscheme.nvim',
+    	'dgox16/devicon-colorscheme.nvim', -- optional for icon colors
     },
     config = function()
-        require 'juicy' .load()
-    end
-}
+      local C = require('juicy.colors')
+      require('juicy').load {
+        cursorline = {
+          theme = 'dark',
+        },
+      }
+      -- optional
+      require('devicon-colorscheme').setup {
+      colors = {
+          blue = C.blue.bright,
+          cyan = C.cyan.bright,
+          green = C.green.bright,
+          magenta = C.pink.bright,
+          orange = C.orange.bright,
+          purple = C.purple.bright,
+          red = C.red.bright,
+          white = C.white.normal,
+          yellow = C.yellow.bright,
+          bright_blue = C.blue.soft,
+          bright_cyan = C.cyan.soft,
+          bright_green = C.green.soft,
+          bright_magenta = C.magenta.soft,
+          bright_orange = C.orange.soft,
+          bright_purple = C.purple.soft,
+          bright_red = C.red.soft,
+          bright_yellow = C.yellow.soft,
+      },
+      }
+      end
+  }
 ```
 
 With [vim-plug](https://github.com/junegunn/vim-plug):

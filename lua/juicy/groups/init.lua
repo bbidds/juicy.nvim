@@ -26,7 +26,6 @@ M.integrations = {
     'lsp_signature',
     'ministatusline',
     'fzf-lua',
-    'dev-icons'
 }
 
 M.native = {
