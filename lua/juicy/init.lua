@@ -20,7 +20,7 @@ function M.load(opts)
 end
 
 -- Add command to nvim
-vim.api.nvim_create_user_command('Juicy', function(_)
+vim.api.nvim_create_user_command('juicy', function(_)
     vim.api.nvim_command 'colorscheme Juicy'
 end, {
     nargs = 1,
