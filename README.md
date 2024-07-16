@@ -9,6 +9,7 @@ If there is anything that does not seem right, even if it is a very small highli
 With [packer.nvim](https://github.com/wbthomason/packer.nvim):
 
 ```lua
+use 'dgox16/devicon-colorscheme.nvim'
 use 'bbidds/juicy.nvim'
 ```
 
@@ -20,6 +21,9 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim):
     branch = 'main',
     lazy = false,
     priority = 999,
+    dependencies = {
+        'dgox16/devicon-colorscheme.nvim',
+    },
     config = function()
         require 'juicy' .load()
     end
@@ -30,6 +34,7 @@ With [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```vim
 Plug 'bbidds/juicy.nvim', { 'branch': 'main' }
+Plug 'dgox16/devicon-colorscheme.nvim',
 ```
 
 # 🚀 Usage

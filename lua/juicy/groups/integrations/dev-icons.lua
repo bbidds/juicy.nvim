@@ -21,3 +21,5 @@ require('devicon-colorscheme').setup {
         bright_yellow = C.yellow.soft,
     },
 }
+
+return {}
