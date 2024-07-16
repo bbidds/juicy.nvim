@@ -26,6 +26,7 @@ M.integrations = {
     'lsp_signature',
     'ministatusline',
     'fzf-lua',
+    'dev-icons'
 }
 
 M.native = {
@@ -33,10 +34,6 @@ M.native = {
     'syntax',
     'diff',
     'lsp',
-}
-
-M.styles = {
-    'dev-icons'
 }
 
 function M.get_groups()
@@ -48,14 +45,6 @@ function M.get_groups()
         groups = merge(groups, require('juicy.groups.integrations.' .. integration))
     end
     return merge(groups, C.options.override)
-end
-
-function M.get_styles()
-    local groups = {}
-    for _, style in ipairs(M.styles) do
-        groups = merge(groups, require('juicy.groups.styles.' .. style))
-    end
-    return groups
 end
 
 return M
