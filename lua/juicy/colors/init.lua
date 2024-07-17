@@ -136,7 +136,7 @@ function C.extend_palette(style)
     C = O.on_palette(C)
     C.none = "NONE"
     -- Modify the palette before generating colors.
-
+    vim.api.nvim_err_write(O.theme)
     if O.theme == "Nord" then
 	    Nord()
     else

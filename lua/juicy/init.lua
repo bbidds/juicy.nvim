@@ -16,7 +16,7 @@ function M.load(opts)
     -- Apply theme
     require('juicy.colors').extend_palette(C.options.theme)
     U.highlight(G.get_groups())
-    --G.set_term_colors()
+    -- G.set_term_colors()
 end
 
 -- Add command to nvim
