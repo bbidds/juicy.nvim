@@ -11,10 +11,10 @@ function M.load(opts)
         vim.g.colors_name = U.NAME
     end
 
-    C.setup(opts)
+    if opts then C.setup(opts) end
 
     -- Apply theme
-    require('juicy.colors').extend_palette(C.options.theme)
+    require('juicy.colors').extend_palette()
     U.highlight(G.get_groups())
     -- G.set_term_colors()
 end

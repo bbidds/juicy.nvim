@@ -1,6 +1,7 @@
 local M = {}
 
 M.NAME = 'juicy'
+
 function M.loaded()
     return vim.g.colors_name == M.NAME
 end
