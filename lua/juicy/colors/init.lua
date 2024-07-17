@@ -138,9 +138,9 @@ function C.extend_palette(style)
     -- Modify the palette before generating colors.
     vim.api.nvim_err_write(O.theme)
     if O.theme == "Nord" then
-	    Nord()
-    else
 	    Juicy()
+    else
+	    Nord()
     end
 
     -- Swap background
