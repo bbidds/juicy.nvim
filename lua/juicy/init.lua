@@ -14,7 +14,7 @@ function M.load(opts)
     if opts then C.setup(opts) end
 
     -- Apply theme
-    require('juicy.colors').extend_palette()
+    require('juicy.colors').extend_palette(C.setup(opts))
     U.highlight(G.get_groups())
     -- G.set_term_colors()
 end
