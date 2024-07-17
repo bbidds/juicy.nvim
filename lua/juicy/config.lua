@@ -8,14 +8,8 @@ local defaults = {
 
     background = nil,
 
-    -- Override terminal bg
-    terminal = {
-        terminal = "kitty",
-        bg = false,
-    },
-
-    -- Available styles dark, lighter, juicy
-    theme = "", -- radiance, TODO
+    -- Available styles Nord, Base16
+    theme = "Juicy",
 
     -- Enable bold keywords.
     bold_keywords = false,

@@ -21,7 +21,7 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim):
     priority = 1000,
     lazy = false,
     dependencies = {
-    	'dgox16/devicon-colorscheme.nvim', -- optional for icon colors
+    	'dgox16/devicon-colorscheme.nvim', -- Optional for icon colors
     },
     config = function()
       local C = require('juicy.colors')
@@ -30,7 +30,7 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim):
           theme = 'dark',
         },
       }
-      -- optional
+      -- Optional
       require('devicon-colorscheme').setup {
       colors = {
           blue = C.blue.bright,
@@ -97,52 +97,55 @@ local palette = require 'juicy.colors'
 
 # ⚙️ Configuration
 
-Foggy will use the default values, unless `setup` is called. Below is the default configuration.
+Foggy will use the default values, unless `setup` is called Below is the default configuration
 
 ```lua
-require 'juicy' .setup {
-    -- This callback can be used to override the colors used in the palette.
+require 'juicy' setup {
+    -- This callback can be used to override the colors used in the palette
     on_palette = function(palette) return palette end,
 
-    -- Enable bold keywords.
+    -- Available theme: Nord
+    theme = "Juicy",
+
+    -- Enable bold keywords
     bold_keywords = false,
-    -- Enable italic comments.
+    -- Enable italic comments
     italic_comments = true,
-    -- Enable general editor background transparency.
+    -- Enable general editor background transparency
     transparent_bg = false,
     -- Enable background highlighting
     bg_highlight = true,
-    -- Enable brighter float border.
+    -- Enable brighter float border
     bright_border = false,
-    -- Reduce the overall amount of blue in the theme (diverges from base Nord).
+    -- Reduce the overall amount of blue in the theme (diverges from base Nord)
     reduced_blue = false,
-    -- Swap the dark background with the normal one.
+    -- Swap the dark background with the normal one
     swap_backgrounds = false,
-    -- Override the styling of any highlight group.
+    -- Override the styling of any highlight group
     override = {},
-    -- Cursorline options.  Also includes visual/selection.
+    -- Cursorline options  Also includes visual/selection
     cursorline = {
-        -- Bold font in cursorline.
+        -- Bold font in cursorline
         bold = false,
-        -- Bold cursorline number.
+        -- Bold cursorline number
         bold_number = true,
-        -- Avialable styles: 'dark', 'light'.
+        -- Avialable styles: 'dark', 'light'
         theme = 'light',
-        -- Blending the cursorline bg with the buffer bg.
+        -- Blending the cursorline bg with the buffer bg
         blend = 0.6,
         -- Visual blend
         visual_blend = 0.4,
     },
     noice = {
-        -- Available styles: `classic`, `flat`.
+        -- Available styles: `classic`, `flat`
         style = 'classic',
     },
     telescope = {
-        -- Available styles: `classic`, `flat`.
+        -- Available styles: `classic`, `flat`
         style = 'flat',
     },
     leap = {
-        -- Dims the backdrop when using leap.
+        -- Dims the backdrop when using leap
         dim_backdrop = false,
     },
     ts_context = {

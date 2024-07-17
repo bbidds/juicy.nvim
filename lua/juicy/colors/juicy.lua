@@ -59,6 +59,7 @@ local colors = {
         dull1 = "#646977",
         dull2 = "#6E7281",
         dull3 = "#787D8B",
+	-- Slightly modified Nord palette, but it's still from the Nord palette.
         g0 = "#2E3340",
         gd0 = "#2c2f3b",
         gd1 = "#383e4d",
@@ -66,6 +67,7 @@ local colors = {
         g2 = "#3A4155",
         g3 = "#48536F",
         g4 = "#566180",
+
         lgray0 = "#868B99",
         lgray1 = "#8E94A4",
         lgray2 = "#969DAC",
