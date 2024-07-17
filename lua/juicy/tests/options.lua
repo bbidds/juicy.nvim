@@ -21,6 +21,7 @@ config.on_palette = function(palette)
 end
 
 -- Flip all fields
+config.theme = "Juicy"
 config.bold_keywords = not config.bold_keywords
 config.italic_comments = not config.italic_comments
 config.transparent_bg = not config.transparent_bg

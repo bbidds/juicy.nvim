@@ -131,17 +131,16 @@ local function Nord()
 
 end
 
+if O.theme == "Nord" then
+    Nord()
+else
+    Juicy()
+end
+
 function C.extend_palette(style)
     C.extended = true
     C = O.on_palette(C)
     C.none = "NONE"
-    -- Modify the palette before generating colors.
-    vim.api.nvim_err_write(O.theme)
-    if O.theme == "Nord" then
-	    Juicy()
-    else
-	    Nord()
-    end
 
     -- Swap background
     if O.swap_backgrounds then
