@@ -4,6 +4,7 @@ local C = require 'juicy.colors.juicy'
 local diff_blend = 0.2
 
 -- Modify the palette before generating colors.
+C = O.on_palette(C)
 C.extended = false
 
 local function Juicy()

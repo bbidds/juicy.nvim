@@ -3,25 +3,6 @@
 
 local O = require('juicy.config').options
 local colors = {
-    fruits = {
-        f1 = "#E57373",      -- Normal:  red
-        f2 = "#FFD54F",      -- Normal:  yellow
-        f3 = "#BA68C8",      -- Normal:  purple
-        f4 = "#FFB74D",      -- Normal:  orange
-        f5 = "#64B5F6",      -- Normal:  blue
-        f6 = "#81C784",      -- Normal:  green
-        f7 = "#F06292",      -- Normal:  pink
-        f8 = "#B8C0A2",      -- Normal:  white
-
-        f9 = "#FF8A80",      -- Bright: Light cherry red
-        f10 = "#FFF176",     -- Bright: Light mango yellow
-        f11 = "#CE93D8",     -- Bright: Light plum purple
-        f12 = "#FFAB91",     -- Bright: Light peach pink
-        f13 = "#A5D6A7",     -- Bright: Light kiwi green
-        f14 = "#93b9f3",     -- Bright: Light elderberry
-        f15 = "#FF80AB",     -- Bright: Light raspberry pink
-        f16 = "#E0E0E0"      -- Bright: Coconut white
-    },
     light = {
         base = "#F5F5DC",
         bright = "#FFFFF0",

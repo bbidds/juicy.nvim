@@ -10,15 +10,5 @@ return {
 
     -- TODO: Unsure.
     WhichKeySeperator = {},
-    WhichKeyValue = { fg = C.blue.base, bold = true},
-    whichKeyIcon = {},
-    whichKeyIconAzure = { fg = C.fruits.f16},
-    whichKeyIconBlue = { fg = C.fruits.f5},
-    whichKeyIconCyan = { fg = C.fruits.f14},
-    whichKeyIconGreen = { fg = C.fruits.f6},
-    whichKeyIconGrey = { fg = C.fruits.f8},
-    whichKeyIconOrange = { fg = C.fruits.f12},
-    whichKeyIconPurple = { fg = C.fruits.f3},
-    whichKeyIconRed = { fg = C.fruits.f9},
-    whichKeyIconYellow = { fg = C.fruits.f10},
+    WhichKeyValue = {},
 }
