@@ -192,6 +192,6 @@ colors = {
 }
 -- `white0` is used as the default fg, and has a blue tint.
 -- Reduce that amount of tint.
-if O.reduced_blue then colors.blue.base = colors.blue.subtle end
+if O.reduced_blue then colors.blue.base = colors.blue.bright end
 
 return colors
