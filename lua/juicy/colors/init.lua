@@ -32,8 +32,8 @@ local function Juicy()
     C.fg_selected = C.fg_bright
 
     -- Popups
-    C.bg_popup = C.black.lighter
-    C.fg_popup = C.white.darker
+    C.bg_popup = C.black.dark
+    C.fg_popup = C.gray.dull3
     C.bg_popup_border = C.bg_popup
     C.fg_popup_border = C.fg_popup
 
