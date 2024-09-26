@@ -44,7 +44,7 @@ local groups = {
     ModeMsg = { fg = C.fg, bold = true },                                -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea = { fg = C.fg },                                             -- Area for messages and cmdline
     -- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
-    MoreMsg = { fg = C.blue.b1 },                                        -- |more-prompt|
+    MoreMsg = { fg = C.blue.base },                                        -- |more-prompt|
     NonText = { fg = C.gray.gyn1 },                                      -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 
     Normal = { fg = C.fg, bg = C.bg },                                   -- normal text

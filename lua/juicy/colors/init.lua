@@ -38,10 +38,10 @@ local function Juicy()
     C.fg_popup_border = C.fg_popup
 
     -- Floating windows
-    C.bg_float = C.bg
-    C.fg_float = C.fg
+    C.bg_float = C.black.dark
+    C.fg_float = C.white.normal
     C.bg_float_border = C.bg_float
-    C.fg_float_border = C.fg_float
+    C.fg_float_border = C.black.darker
 
     C.diff = {
         change0 = U.blend(C.white.normal, C.bg, 0.05),
