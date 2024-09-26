@@ -32,13 +32,13 @@ local function Juicy()
     C.fg_selected = C.fg_bright
 
     -- Popups
-    C.bg_popup = C.black.dark
+    C.bg_popup = C.fg
     C.fg_popup = C.gray.dull3
     C.bg_popup_border = C.bg_popup
     C.fg_popup_border = C.fg_popup
 
     -- Floating windows
-    C.bg_float = C.black.dark
+    C.bg_float = (O.transparent.float and C.none) or ((O.swap_backgrounds and C.gray.g1) or C.black.darker)
     C.fg_float = C.white.normal
     C.bg_float_border = C.bg_float
     C.fg_float_border = C.black.darker
