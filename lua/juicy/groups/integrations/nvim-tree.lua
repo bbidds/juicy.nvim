@@ -6,14 +6,14 @@ return {
     NvimTreeNormal = { fg = C.fg },
     NvimTreeNormalNC = { fg = C.fg },
 
-    NvimTreeFolderName = { fg = C.fg_highlight },
+    NvimTreeFolderName = { fg = C.fg_inactive },
     NvimTreeOpenedFolderName = { link = 'NvimTreeFolderName' },
     NvimTreeEmptyFolderName = { link = 'NvimTreeFolderName' },
-    NvimTreeFolderIcon = { fg = C.teal.base },
+    NvimTreeFolderIcon = { fg = C.blue.dim },
 
     NvimTreeSpecialFile = { link = 'NvimTreeFolderName' },
 
-    NvimTreeRootFolder = { fg = C.fg_highlight },
+    NvimTreeRootFolder = { fg = C.fg_inactive },
     NvimTreeGitDirty = { fg = C.git.change },
     NvimTreeGitNew = { fg = C.git.add },
     NvimTreeGitDeleted = { fg = C.git.delete },

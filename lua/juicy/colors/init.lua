@@ -15,7 +15,8 @@ local function Juicy()
     C.bg_dark = C.black.darkest
     C.bg_inactive = C.black.darker
     C.bg_highlight = C.gray.g1
-    C.bg_visual = C.bg_highlight
+    C.bg_visual = C.white.medium
+    C.bg_bright = C.gray.hl3
     C.bg_sidebar = C.bg
     C.bg_statusline = C.bg_dark
     C.bg_selected = C.white.medium
@@ -23,13 +24,15 @@ local function Juicy()
 
     -- Foregrounds
     C.fg = C.white.medium
+    C.fg_dark = C.black.light
     C.fg_inactive = C.white.darker
-    C.fg_hightlight = C.white.medium
+    C.fg_hightlight = C.white.light
     C.fg_bright = C.gray.hl2
-    C.fg_dark = C.black.darker
+    C.fg_visual = C.black.normal
     C.fg_sidebar = C.bg_highlight
-    C.fg_fold = C.fg
+    C.fg_statusline = C.fg_dark
     C.fg_selected = C.fg_bright
+    C.fg_fold = C.fg
 
     -- Popups
     C.bg_popup = C.black.darker
@@ -39,9 +42,9 @@ local function Juicy()
 
     -- Floating windows
     C.bg_float = (O.transparent.float and C.none) or ((O.swap_backgrounds and C.gray.g1) or C.black.darker)
-    C.fg_float = C.black.normal
+    C.fg_float = C.fg_inactive
     C.bg_float_border = C.bg_float
-    C.fg_float_border = C.black.darker
+    C.fg_float_border = C.black.darkest
 
     C.diff = {
         change0 = U.blend(C.white.normal, C.bg, 0.05),
