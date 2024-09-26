@@ -26,8 +26,8 @@ local groups = {
 
     ErrorMsg = { fg = C.error },                                         -- error messages on the command line
 
-    VertSplit = { fg = C.fg_hightlight, bg = C.bg },                                    -- the column separating vertically split windows
-    WinSeparator =  { fg = C.fg_hightlight, bg = C.bg },               -- the column separating vertically split windows
+    VertSplit = { fg = C.fg_inactive, bg = C.bg },                                    -- the column separating vertically split windows
+    WinSeparator =  { fg = C.fg_inactive, bg = C.bg },               -- the column separating vertically split windows
 
     Folded = { fg = C.fg_fold, bg = C.bg_fold },                         -- line used for closed folds
     FoldColumn = { bg = C.bg_fold, fg = C.fg_fold },                     -- 'foldcolumn'
