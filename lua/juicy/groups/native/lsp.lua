@@ -27,7 +27,7 @@ return {
     DiagnosticUnderlineWarn = { undercurl = true, sp = C.warning },          -- Used to underline "Warning" diagnostics
     DiagnosticUnderlineInfo = { undercurl = true, sp = C.info },             -- Used to underline "Information" diagnostics
     DiagnosticUnderlineHint = { undercurl = true, sp = C.hint },             -- Used to underline "Hint" diagnostics
-    DiagnosticText = { bg = C.black.b1 },
+    DiagnosticText = { bg = C.black.lightest },
 
     LspSignatureActiveParameter = { bg = C.gray.dull3, bold = true },
     LspCodeLens = { fg = C.comment },

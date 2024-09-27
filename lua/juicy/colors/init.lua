@@ -7,7 +7,7 @@ local diff_blend = 0.2
 C = O.on_palette(C)
 C.extended = false
 
-local function Juicy()
+local function Juicy(style)
     C.extended = true
 
     -- Backgrounds
@@ -69,7 +69,7 @@ local function Juicy()
 
 end
 
-local function Nord()
+local function Nord(style)
     C.extended = true
 
     -- Swap background
@@ -137,7 +137,6 @@ end
 
 
 function C.extend_palette(style)
-    C.extended = true
     C = O.on_palette(C)
     C.none = "NONE"
 
