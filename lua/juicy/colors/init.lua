@@ -140,10 +140,9 @@ end
 function C.extend_palette(style)
     C = O.on_palette(C)
     C.none = "NONE"
-
+    print("Current theme in extend_palette:", O.theme)  -- Debug print
     if O.theme == "Nord" then
         Nord()
-print("termguicolors:", vim.o.termguicolors)
     else
         Juicy()
     end
