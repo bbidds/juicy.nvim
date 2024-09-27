@@ -72,6 +72,7 @@ end
 local function Nord(style)
     C.extended = true
 
+
     -- Swap background
     if O.swap_backgrounds then
         C.gray.dull0 = C.black.dark
@@ -142,6 +143,7 @@ function C.extend_palette(style)
 
     if O.theme == "Nord" then
         Nord()
+print("termguicolors:", vim.o.termguicolors)
     else
         Juicy()
     end
