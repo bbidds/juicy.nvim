@@ -10,9 +10,9 @@ return {
     -- Uncomment and edit if you want more specific syntax highlighting.
 
     Constant = { fg = C.orange.base }, -- (preferred) any constant
-    Number = { fg = C.cyan.base },     --   a number constant: 234, 0xff
-    Boolean = { fg = C.green.bright },  --  a boolean constant: TRUE, false
-    Float = { fg = C.magenta.bright },  --    a floating point constant: 2.3e10
+    Number = { link = 'Constant' },    --   a number constant: 234, 0xff
+    Boolean = { link = 'Number' },     --  a boolean constant: TRUE, false
+    Float = { link = 'Number' },       --    a floating point constant: 2.3e10
     None = { fg = C.none, bg = C.none },
     String = { fg = C.gray.gyn1 },     --   a string constant: "this is a string"
     Character = { fg = C.green.base },  --  a character constant: 'c', '\n'
@@ -24,19 +24,19 @@ return {
 
     Builtin = { fg = C.red.subtle },
 
-    Identifier = { fg = C.gray.gyn1 },                     -- (preferred) any variable name
-    Function = { fg = C.blue.base },                       -- function name (also: methods for classes)
+    Identifier = { fg = C.gray.gyn1 },                      -- (preferred) any variable name
+    Function = { fg = C.blue.base },                   -- function name (also: methods for classes)
 
-    Keyword = { fg = C.yellow.base, bold = O.bold_keywords }, --  any other keyword
+    Keyword = { fg = C.gray.gyn1, bold = O.bold_keywords }, --  any other keyword
     Statement = { link = 'Keyword' },                       -- (preferred) any statement
     Conditional = { link = 'Keyword' },                     --  if, then, else, endif, switch, etc.
     Repeat = { link = 'Keyword' },                          --   for, do, while, etc.
     Label = { link = 'Keyword' },                           --    case, default, etc.
-    Operator = { fg = C.orange.base },                      -- "sizeof", "+", "*", etc.
+    Operator = { link = 'Keyword' },                        -- "sizeof", "+", "*", etc.
 
-    Macro = { fg = C.green.base },                          -- same as Define
+    Macro = { fg = C.green.base },                       -- same as Define
     Exception = { link = 'Macro' },                         --  try, catch, throw
-    PreProc = { fg = C.red.subtle },                        -- (preferred) generic preprocessor
+    PreProc = { link = 'Macro' },                           -- (preferred) generic preprocessor
     Include = { fg = C.blue.base },                         --  preprocessor #include
     Define = { fg = C.blue.base },                          --   preprocessor #define
     PreCondit = { link = 'Macro' },                         --  preprocessor #if, #else, #endif, etc.
@@ -45,10 +45,10 @@ return {
 
     Type = { fg = C.yellow.base },       -- (preferred) int, long, char, etc.
     StorageClass = { link = 'Keyword' }, -- static, register, volatile, etc.
-    Structure = { fg = C.blue.bright },  --  struct, union, enum, etc.
-    Typedef = { fg = C.magenta.bright },  --  A typedef
+    Structure = { link = 'Type' },       --  struct, union, enum, etc.
+    Typedef = { link = 'Type' },         --  A typedef
 
-    Special = { fg = C.red.base },        -- (preferred) any special symbol
+    Special = { fg = C.blue.base },        -- (preferred) any special symbol
     -- SpecialChar   = { }, --  special character in a constant
     -- Tag           = { }, --    you can use CTRL-] on this
     -- Delimiter     = { }, --  character that needs attention
@@ -62,8 +62,8 @@ return {
     -- ("Ignore", below, may be invisible...)
     Ignore = { fg = C.gray.g0 },                     -- (preferred) left blank, hidden  |hl-Ignore|
 
-    Error = { fg = C.red.bright },                   -- (preferred) any erroneous construct
-    Todo = { fg = C.yellow.base, bold = true },      -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Error = { fg = C.error },                        -- (preferred) any erroneous construct
+    Todo = { fg = C.yellow.base }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     Note = { fg = C.black.light, bg = C.info },
 
     -- What are these?
