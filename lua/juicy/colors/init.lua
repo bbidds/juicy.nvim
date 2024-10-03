@@ -42,7 +42,7 @@ local function Juicy(style)
 
     -- Floating windows
     C.bg_float = (O.transparent.float and C.none) or ((O.swap_backgrounds and C.gray.g1) or C.black.darker)
-    C.fg_float = C.fg_inactive
+    C.fg_float = C.fg_dark
     C.bg_float_border = C.bg_float
     C.fg_float_border = C.black.darkest
 
