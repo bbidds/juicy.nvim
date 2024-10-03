@@ -25,7 +25,7 @@ local function Juicy(style)
     -- Foregrounds
     C.fg = C.white.medium
     C.fg_dark = C.black.light
-    C.fg_inactive = C.white.darker
+    C.fg_inactive = C.black.darker
     C.fg_hightlight = C.white.light
     C.fg_bright = C.gray.hl2
     C.fg_visual = C.black.normal
