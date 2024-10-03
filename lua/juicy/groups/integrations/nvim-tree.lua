@@ -18,7 +18,7 @@ return {
     NvimTreeGitNew = { fg = C.git.add },
     NvimTreeGitDeleted = { fg = C.git.delete },
     NvimTreeGitStaged = { fg = C.fg.highlight },
-    NvimTreeIndentMarker = { fg = C.bg_highlight },
+    NvimTreeIndentMarker = { fg = C.fg_inactive },
 
 
     NvimTreeWinSeparator = { fg = C.bg_dark, bg = C.bg },
