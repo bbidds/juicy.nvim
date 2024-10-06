@@ -1,86 +1,88 @@
 -- Notes and format from @folke/tokyonight.nvim.
 
-local C = require 'juicy.colors'
-local O = require('juicy.config').options
+local C = require 'juicy.colors'          -- Require the juicy color palette.
+local O = require('juicy.config').options -- Load configuration options for juicy colors.
 
 return {
-    Constant = { fg = C.orange.base },         -- (preferred) any constant
-    Number = { fg = C.cyan.base },             --   a number constant: 234, 0xff
-    Boolean = { fg = C.green.bright },          --  a boolean constant: TRUE, false
-    Float = { fg = C.magenta.bright },          --    a floating point constant: 2.3e10
-    None = { fg = C.none, bg = C.none },
-    String = { fg = C.gray.gyn1 },             --   a string constant: "this is a string"
-    Character = { fg = C.green.base },          --  a character constant: 'c', '\n'
-    Variable = { fg = C.magenta.bright },       -- Changed to enhance differentiation
-    Namespace = { fg = C.gray.hl0 },
-    Field = { fg = C.gray.gyn2 },
+    Constant = { fg = C.orange.base },         -- (preferred) Represents any constant.
+    Number = { fg = C.cyan.base },             -- Number constant: e.g., 234, 0xff
+    Boolean = { fg = C.green.bright },          -- Boolean constants: TRUE, false
+    Float = { fg = C.red.base },                -- Floating point constant: e.g., 2.3e10
+    None = { fg = C.none, bg = C.none },       -- Represents 'nil' or empty values.
 
-    Title = { fg = C.blue.bright },             -- Changed from yellow to blue for better contrast
+    String = { fg = C.gray.gyn1 },             -- String constant: e.g., "this is a string"
+    Character = { fg = C.blue.bright },         -- Character constant: e.g., 'c', '\n'
+    Variable = { fg = C.green.base },           -- Variable names, differentiated for clarity.
+    Namespace = { fg = C.gray.hl0 },            -- Namespaces for organization.
+    Field = { fg = C.gray.gyn2 },               -- Fields within tables or objects.
 
-    Builtin = { fg = C.red.subtle },
+    Title = { fg = C.teal.bright },             -- Title elements, changed to teal for better contrast.
 
-    Identifier = { fg = C.gray.gyn1 },                     -- (preferred) any variable name
-    Function = { fg = C.teal.bright },                       -- Changed from blue to teal for better contrast
+    Builtin = { fg = C.red.subtle },            -- Built-in identifiers, subtly highlighted.
 
-    Keyword = { fg = C.purple.base, bold = O.bold_keywords }, -- Changed to purple for better differentiation
-    Statement = { link = 'Keyword' },                       -- (preferred) any statement
-    Conditional = { link = 'Keyword' },                     --  if, then, else, endif, switch, etc.
-    Repeat = { link = 'Keyword' },                          --   for, do, while, etc.
-    Label = { link = 'Keyword' },                           --    case, default, etc.
-    Operator = { fg = C.orange.base },                      -- "sizeof", "+", "*", etc.
+    Identifier = { fg = C.gray.gyn1 },          -- (preferred) Any variable name.
+    Function = { fg = C.orange.bright },        -- Function names, changed for better contrast.
 
-    Macro = { fg = C.green.base },                          -- same as Define
-    Exception = { link = 'Macro' },                         --  try, catch, throw
-    PreProc = { fg = C.red.subtle },                        -- (preferred) generic preprocessor
-    Include = { fg = C.teal.bright },                       -- Changed to teal for better contrast
-    Define = { fg = C.blue.base },                          --   preprocessor #define
-    PreCondit = { link = 'Macro' },                         --  preprocessor #if, #else, #endif, etc.
+    Keyword = { fg = C.cyan.bright, bold = O.bold_keywords }, -- Keywords highlighted in cyan for distinction.
+    Statement = { link = 'Keyword' },           -- Any statement that matches keyword styles.
+    Conditional = { link = 'Keyword' },         -- Conditional keywords: if, then, else, etc.
+    Repeat = { link = 'Keyword' },              -- Loop constructs: for, do, while, etc.
+    Label = { link = 'Keyword' },               -- Case labels, defaults, etc.
+    Operator = { fg = C.orange.base },          -- Operators like "sizeof", "+", "*", etc.
 
-    Comment = { fg = C.gray.g1, italic = O.italic_comments },
+    Macro = { fg = C.green.base },              -- Macros, typically similar to defines.
+    Exception = { link = 'Macro' },             -- Exception handling keywords.
+    PreProc = { fg = C.red.subtle },            -- Preprocessor directives.
+    Include = { fg = C.blue.bright },           -- Include directives highlighted in blue.
+    Define = { fg = C.teal.base },              -- Preprocessor #define directives.
+    PreCondit = { link = 'Macro' },             -- Conditional preprocessor directives.
 
-    Type = { fg = C.green.light },       -- Changed from yellow to light green for better differentiation
-    StorageClass = { link = 'Keyword' }, -- static, register, volatile, etc.
-    Structure = { fg = C.blue.bright },  --  struct, union, enum, etc.
-    Typedef = { fg = C.magenta.bright },  --  A typedef
+    Comment = { fg = C.gray.g1, italic = O.italic_comments }, -- Comments styled in italic for readability.
 
-    Special = { fg = C.red.base },        -- (preferred) any special symbol
+    Type = { fg = C.yellow.bright },            -- Type names highlighted in a light yellow shade.
+    StorageClass = { link = 'Keyword' },        -- Storage class specifiers.
+    Structure = { fg = C.cyan.bright },         -- Structures, unions, enums highlighted.
+    Typedef = { fg = C.orange.base },            -- Typedefs with enhanced visibility.
 
-    Class = { fg = C.purple.bright },                -- class names
-    Property = { fg = C.orange.base },               -- object and class properties
-    Enum = { fg = C.teal.base },                     -- enumerations
-    Interface = { fg = C.yellow.bright },            -- interfaces
-    Annotation = { fg = C.magenta.base },            -- annotations in Java or Python
-    FunctionCall = { fg = C.cyan.bright },          -- function calls
-    Method = { fg = C.green.bright },                -- methods
-    ConstantColor = { fg = C.red.subtle },          -- constants with colors
-    SpecialChar = { fg = C.gray.g2 },               -- special characters in strings
+    Special = { fg = C.red.base },               -- Special symbols or keywords.
 
-    VariableScope = { fg = C.blue.base },            -- scope variables
-    Parameter = { fg = C.pink.bright },              -- function parameters
+    Class = { fg = C.teal.bright },              -- Class names highlighted in bright teal.
+    Property = { fg = C.blue.base },             -- Properties of objects/classes.
+    Enum = { fg = C.yellow.base },               -- Enum types highlighted for distinction.
+    Interface = { fg = C.green.base },           -- Interface declarations.
+    Annotation = { fg = C.orange.bright },       -- Annotations in languages like Java or Python.
+    FunctionCall = { fg = C.cyan.bright },      -- Function calls styled for visibility.
+    Method = { fg = C.green.bright },            -- Methods, highlighted distinctly.
+    ConstantColor = { fg = C.red.subtle },      -- Constants with color styling.
+    SpecialChar = { fg = C.gray.g2 },           -- Special characters in strings.
 
-    -- Ignore, below, may be invisible...
-    Ignore = { fg = C.gray.g0 },                     -- (preferred) left blank, hidden  |hl-Ignore|
+    VariableScope = { fg = C.teal.base },        -- Scope variables with clear visibility.
+    Parameter = { fg = C.orange.bright },        -- Parameters in function definitions.
 
-    Error = { fg = C.red.bright },                   -- (preferred) any erroneous construct
-    Todo = { fg = C.magenta.base, bold = true },      -- Changed to magenta for better differentiation
-    Note = { fg = C.black.light, bg = C.info },
+    -- Ignore, below may be invisible...
+    Ignore = { fg = C.gray.g0 },                 -- Left blank, hidden elements.
 
-    -- What are these?
-    qfLineNr = { fg = C.gray.gy0 },
-    qfFileName = { fg = C.blue.base },
+    Error = { fg = C.red.bright },               -- Highlighted for erroneous constructs.
+    Todo = { fg = C.blue.bright, bold = true },  -- TODO comments highlighted in bright blue.
+    Note = { fg = C.black.bright, bg = C.info }, -- Notes styled with a bright foreground and info background.
 
-    htmlH1 = { fg = C.teal.base, bold = true },          -- Changed from yellow to teal
-    htmlH2 = { fg = C.orange.base },
+    -- Additional UI elements:
+    qfLineNr = { fg = C.gray.gy0 },              -- Quickfix line number.
+    qfFileName = { fg = C.blue.base },           -- Quickfix file names.
 
-    Link = { fg = C.blue.b1, underline = true },
-    CodeBlock = { bg = C.orange.base, fg = C.fg },
+    htmlH1 = { fg = C.teal.base, bold = true },  -- HTML headers styled with teal.
+    htmlH2 = { fg = C.orange.base },              -- Second level headers styled with orange.
 
+    Link = { fg = C.blue.b1, underline = true },  -- Links styled for visibility.
+    CodeBlock = { bg = C.orange.base, fg = C.fg }, -- Code blocks highlighted distinctly.
+
+    -- Markdown styling
     mkdHeading = { link = 'htmlH1' },
     mkdCode = { link = 'CodeBlock' },
     mkdCodeDelimiter = { link = 'CodeBlock' },
-    mkdCodeStart = { fg = C.cyan.base, bold = true },
-    mkdCodeEnd = { fg = C.cyan.base, bold = true },
-    mkdLink = { link = 'Link' },
+    mkdCodeStart = { fg = C.cyan.base, bold = true }, -- Markdown code start highlighted.
+    mkdCodeEnd = { fg = C.cyan.base, bold = true },   -- Markdown code end highlighted.
+    mkdLink = { link = 'Link' },                      -- Markdown links styled.
 
     markdownHeadingDelimiter = { link = 'mkdHeading' },
     markdownCode = { link = 'CodeBlock' },
@@ -89,13 +91,14 @@ return {
     markdownH2 = { link = 'htmlH2' },
     markdownLinkText = { link = 'Link' },
 
-    ['@punctuation.special.markdown'] = { fg = C.teal.bright, bold = true },  -- Changed to teal
-    ['@text.todo.unchecked'] = { fg = C.blue.b1 },  -- For brackets and parens.
-    ['@text.todo.checked'] = { fg = C.green.base }, -- For brackets and parens.
-    ['@text.literal.markdown_inline'] = { bg = C.cyan.base, fg = C.blue.b1 },
-    ['@text.literal.markdown'] = { link = 'Normal' },
-    ['helpCommand'] = { bg = C.black.dark, fg = C.blue.b1 },
+    -- Markdown specific highlighting
+    ['@punctuation.special.markdown'] = { fg = C.teal.bright, bold = true }, -- Special punctuation in markdown.
+    ['@text.todo.unchecked'] = { fg = C.blue.b1 }, -- Unchecked TODO items.
+    ['@text.todo.checked'] = { fg = C.green.base }, -- Checked TODO items.
+    ['@text.literal.markdown_inline'] = { bg = C.cyan.base, fg = C.blue.b1 }, -- Inline markdown text.
+    ['@text.literal.markdown'] = { link = 'Normal' }, -- General markdown text styling.
+    ['helpCommand'] = { bg = C.black.dark, fg = C.blue.b1 }, -- Help command styling.
 
-    debugPC = { bg = C.bg_sidebar },         -- used for highlighting the current line in terminal-debug
-    debugBreakpoint = { fg = C.red.bright }, -- used for breakpoint colors in terminal-debug
+    debugPC = { bg = C.bg_sidebar },          -- Highlighting for current line in terminal debug.
+    debugBreakpoint = { fg = C.red.bright },  -- Breakpoint colors in terminal debug.
 }
