@@ -73,7 +73,7 @@ return {
 
     -- Errors and Notices
     Error = { fg = C.red.bright },                -- (preferred) any erroneous construct
-    Todo = { fg = C.gray.g1, bold = true },       -- Changed from yellow for better differentiation
+    Todo = { fg = C.yellow.base, bold = true },       -- Changed from yellow for better differentiation
     Note = { fg = C.cyan.bright, bg = C.info },
 
     -- Quickfix elements

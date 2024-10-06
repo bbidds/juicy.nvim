@@ -32,7 +32,7 @@ return {
     ['@parameter.builtin'] = { link = 'Builtin' }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
 
     --- Keywords
-    ['@keyword'] = { fg = C.yellow.bright },          -- For keywords that don't fall in previous categories.
+    ['@keyword'] = { fg = C.green.bright },          -- For keywords that don't fall in previous categories.
     ['@keyword.coroutine'] = { fg = C.orange.base, bold = true },  -- For keywords related to coroutines.
     ['@keyword.function'] = { fg = C.green.base }, -- For keywords used to define a function.
     ['@label'] = { link = 'Keyword' },            -- For labels: `label:` in C and `:label:` in Lua.
