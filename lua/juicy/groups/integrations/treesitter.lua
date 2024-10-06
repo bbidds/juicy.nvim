@@ -125,5 +125,38 @@ return {
     ['@keyword.this'] = { link = 'Keyword' },
     ['@function.builtin'] = { link = 'Function' },
     ['@function.macro'] = { link = 'Macro' },
-    ['@function.call'] = { link = 'Function' },
+    ['@method.call'] = { link = 'Function' },
+    ['@method.function'] = { link = 'Function' },
+    ['@parameter'] = { link = 'Variable' },
+    ['@method.constructor'] = { link = 'Function' },
+    ['@parameter.builtin'] = { link = 'Variable' },
+    ['@field'] = { link = 'Identifier' },          -- Link field names to identifiers.
+
+    -- Additional TSX for React
+    ['@jsx.element'] = { fg = C.red.base },
+    ['@jsx.attribute'] = { fg = C.blue.base },
+    ['@jsx.value'] = { fg = C.green.base },
+
+    -- CSS
+    ['@property'] = { fg = C.yellow.base },        -- For CSS property names.
+    ['@property.name'] = { fg = C.yellow.base },    -- For property names in CSS.
+
+    -- Markdown
+    ['@text.list.unchecked'] = { fg = C.blue.b1 },
+    ['@text.list.checked'] = { fg = C.green.bright },
+    ['@text.bold'] = { bold = true },
+    ['@text.italic'] = { italic = true },
+    ['@text.underline'] = { underline = true },
+    ['@text.strike'] = { strikethrough = true },
+    ['@text.markdown.code'] = { fg = C.orange.base },
+    ['@text.math'] = { fg = C.yellow.base },
+
+    -- Help and Documentation
+    ['@text.documentation'] = { fg = C.green.base },
+    ['@text.note'] = { fg = C.blue.base },
+    ['@text.warning'] = { fg = C.red.base },
+    ['@text.danger'] = { fg = C.red.bright, bold = true },
+    ['@text.todo.unchecked'] = { fg = C.blue.b1 },
+    ['@text.todo.checked'] = { fg = C.green.bright },
+    ['@text.todo.done'] = { fg = C.gray.hl2, strikethrough = true },
 }
