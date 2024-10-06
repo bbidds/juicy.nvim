@@ -99,4 +99,17 @@ return {
 
     debugPC = { bg = C.bg_sidebar },         -- used for highlighting the current line in terminal-debug
     debugBreakpoint = { fg = C.red.bright }, -- used for breakpoint colors in terminal-debug
+
+    Class = { fg = C.purple.bright },                -- class names
+    Property = { fg = C.orange.base },               -- object and class properties
+    Enum = { fg = C.teal.base },                     -- enumerations
+    Interface = { fg = C.yellow.bright },            -- interfaces
+    Annotation = { fg = C.magenta.base },            -- annotations in Java or Python
+    FunctionCall = { fg = C.cyan.bright },          -- function calls
+    Method = { fg = C.green.bright },                -- methods
+    ConstantColor = { fg = C.red.subtle },          -- constants with colors
+    SpecialChar = { fg = C.gray.g2 },               -- special characters in strings
+
+    VariableScope = { fg = C.blue.base },            -- scope variables
+    Parameter = { fg = C.pink.bright },              -- function parameters
 }
