@@ -28,7 +28,7 @@ local function compatability(options)
     -- override
     if options.override ~= nil then
         vim.notify_once(
-            'Nordic.nvim: config.override is deprecated, use config.on_highlight instead',
+            'Juicy.nvim: config.override is deprecated, use config.on_highlight instead',
             level,
             message_options
         )

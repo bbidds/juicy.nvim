@@ -16,7 +16,7 @@ return {
     --- Punctuation
     ['@punctuation.delimiter'] = { link = '@operator' }, -- For delimiters ie: `.`
     ['@punctuation.bracket'] = { fg = C.gray.hl2 },      -- For brackets and parens.
-    ['@punctuation.special'] = { link = '@operator' },   -- For special punctutation that does not fall in the catagories before.
+    ['@punctuation.special'] = { link = '@operator' },   -- For special punctuation that does not fall in the categories before.
     ['@punctuation.special.markdown'] = { fg = C.orange.base, bold = true },
 
     --- Literals
@@ -25,19 +25,22 @@ return {
     ['@string.escape'] = { fg = C.magenta.bright }, -- For escape characters within a string.
 
     --- Functions
-    ['@constructor'] = { fg = C.gray.gyn1 },       -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+    ['@function'] = { fg = C.green.bright },       -- General function names.
+    ['@method'] = { fg = C.cyan.dim },             -- Method names.
+    ['@constructor'] = { fg = C.cyan.dim },       -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     ['@parameter'] = { fg = C.fg, italic = true }, -- For parameters of a function.
     ['@parameter.builtin'] = { link = 'Builtin' }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
 
     --- Keywords
-    ['@keyword'] = { link = 'Keyword' },          -- For keywords that don't fall in previous categories.
-    ['@keyword.coroutine'] = { link = 'Macro' },  -- For keywords related to coroutines.
-    ['@keyword.function'] = { link = 'Keyword' }, -- For keywords used to define a fuction.
+    ['@keyword'] = { fg = C.yellow.bright },          -- For keywords that don't fall in previous categories.
+    ['@keyword.coroutine'] = { fg = C.orange.base, bold = true },  -- For keywords related to coroutines.
+    ['@keyword.function'] = { fg = C.green.base }, -- For keywords used to define a function.
     ['@label'] = { link = 'Keyword' },            -- For labels: `label:` in C and `:label:` in Lua.
 
     --- Types
     ['@type.builtin'] = { link = 'Type' },
-    ['@field'] = { link = 'Field' }, -- For fields.
+    ['@type'] = { fg = C.red.base },                  -- General types.
+    ['@field'] = { fg = C.cyan.bright }, -- For fields.
     ['@property'] = { link = 'Keyword' },
 
     --- Identifiers
@@ -45,23 +48,21 @@ return {
     ['@variable.builtin'] = { link = 'Builtin' }, -- Variable names that are defined by the languages, like `this` or `self`.
 
     --- Text
-    --['@spell'] = {},
-    -- ["@text.literal.markdown"] = { },
     ['@text.literal.markdown_inline'] = { bg = C.black.normal, fg = C.fg },
     ['@text.reference'] = { link = 'Link' },
-    ['@text.todo.unchecked'] = { fg = C.blue.b1 },    -- For brackets and parens.
-    ['@text.todo.checked'] = { fg = C.green.bright }, -- For brackets and parens.
-    ['@text.warning'] = { fg = C.warning },
-    ['@text.danger'] = { fg = C.error },
+    ['@text.todo.unchecked'] = { fg = C.blue.b1 },    -- For unchecked todo items.
+    ['@text.todo.checked'] = { fg = C.green.bright }, -- For checked todo items.
+    ['@text.warning'] = { fg = C.warning, bold = true },  -- Warnings with bold text.
+    ['@text.danger'] = { fg = C.error, underline = true }, -- Danger text with underline.
     ['@text.diff.add'] = { link = 'DiffAdd' },
     ['@text.diff.delete'] = { link = 'DiffDelete' },
 
     -- TSX
     ['@tag.tsx'] = { fg = C.blue.base },
-    ['@constructor.tsx'] = { fg = C.blue.base },
-    ['@tag.delimiter.tsx'] = { fg = C.blue.base },
+    ['@constructor.tsx'] = { fg = C.green.dim },
+    ['@tag.delimiter.tsx'] = { fg = C.red.base },
 
-    --LSP Semantic Token Groups
+    -- LSP Semantic Token Groups
     ['@lsp.type.boolean'] = { link = 'Boolean' },
     ['@lsp.type.builtinType'] = { link = 'Type' },
     ['@lsp.type.comment'] = { link = 'Comment' },
@@ -95,11 +96,11 @@ return {
     ['@lsp.typemod.variable.injected'] = { link = 'Variable' },
     ['@lsp.typemod.variable.globalScope'] = { link = 'Macro' },
 
-    -- Things that seems to be missing?
+    -- Things that seem to be missing?
     ['@text.todo'] = { link = 'Todo' },
     ['@text.note'] = { link = 'Note' },
-    ['@string.special'] = { fg = C.yellow.base }, -- For escape characters within a string.
-    ['@tag'] = { fg = C.blue.b1 },                -- Tags like html tag names.
+    ['@string.special'] = { fg = C.yellow.base }, -- For special strings.
+    ['@tag'] = { fg = C.blue.b1 },                -- Tags like HTML tag names.
     ['@tag.delimiter'] = { fg = C.fg },           -- Tag delimiter like `<` `>` `/`
     ['@tag.attribute'] = { fg = C.yellow.base },  -- Tag attribute like `id` `class`
     ['@text'] = { link = 'Normal' },              -- For strings considered text in a markup language.
@@ -111,8 +112,8 @@ return {
     ['@text.uri'] = { underline = true },         -- Any URI like a link or email.
     ['@text.literal'] = { link = 'String' },
     ['@constant'] = { link = 'Constant' },
-    ['@number'] = { link = 'Constant' },
-    ['@float'] = { link = 'Con.b1tant' },
+    ['@number'] = { fg = C.blue.base },            -- Numbers with a distinct color.
+    ['@float'] = { fg = C.red.bright },           -- Floats with a distinct color.
     ['@boolean'] = { link = 'Constant' },
     ['@constant.macro'] = { link = 'Constant' },
     ['@constant.builtin'] = { link = 'Constant' },
@@ -121,24 +122,8 @@ return {
     ['@repeat'] = { link = 'Keyword' },
     ['@conditional'] = { link = 'Keyword' },
     ['@class'] = { link = 'Keyword' },
-    ['@keyword.operator'] = { link = 'Keyword' },
-    ['@include'] = { fg = C.magenta.base },
-    ['@macro'] = { link = 'Macro' },
-    ['@preproc'] = { link = 'Macro' },
-    ['@attribute'] = { link = 'Macro' },
-    ['@function.macro'] = { link = 'Macro' },
-    ['@define'] = { link = 'Macro' },
-    ['@exception'] = { link = 'Macro' },
-    ['@function'] = { link = 'Function' },
-    ['@method'] = { link = 'Function' },
-    ['@method.call'] = { link = 'Function' },
-    ['@function.call'] = { link = 'Function' },
+    ['@keyword.this'] = { link = 'Keyword' },
     ['@function.builtin'] = { link = 'Function' },
-    ['@property.cpp'] = { fg = C.cyan.base },
-    ['@namespace'] = { fg = C.yellow.dim },
-    ['@type'] = { link = 'Type' },
-    ['@type.definition'] = { link = 'Type' },
-    ['@type.qualifier'] = { link = 'Keyword' },
-    ['@storageclass'] = { link = 'Keyword' },
-    ['@none'] = { link = 'None' },
+    ['@function.macro'] = { link = 'Macro' },
+    ['@function.call'] = { link = 'Function' },
 }
