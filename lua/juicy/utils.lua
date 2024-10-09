@@ -98,21 +98,9 @@ function M.hsv_to_rbg(h, s, v)
     return r * 255, g * 255, b * 255
 end
 
-function M.darken(hex, amount)
-    local r, g, b = M.hex_to_rgb(hex)
-    local h, s, v = M.rgb_to_hsv(r, g, b)
-    v = v * ((1 - amount) / 1)
-    r, g, b = M.hsv_to_rbg(h, s, v)
-    return M.rgb_to_hex(r, g, b)
-end
+function M.darken(hex, amount, bg) return M.blend(hex, bg or M.bg, math.abs(amount)) end
 
-function M.lighten(hex, amount)
-    local r, g, b = M.hex_to_rgb(hex)
-    local h, s, v = M.rgb_to_hsv(r, g, b)
-    v = v * (1 + amount)
-    r, g, b = M.hsv_to_rbg(h, s, v)
-    return M.rgb_to_hex(r, g, b)
-end
+function M.lighten(hex, amount, fg) return M.blend(hex, fg or M.fg, math.abs(amount)) end
 
 -- Adapted from @folke/tokyonight.nvim.
 function M.blend(foreground, background, alpha)

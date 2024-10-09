@@ -26,7 +26,7 @@ return {
     Function = { fg = C.teal.base },            -- Changed for better contrast
 
     -- Keywords and Statements
-    Keyword = { fg = C.purple.base, bold = O.bold_keywords }, -- Changed to purple for better differentiation
+    Keyword = { fg = C.magenta.subtle, bold = O.bold_keywords }, -- Changed to purple for better differentiation
     Statement = { link = 'Keyword' },            -- (preferred) any statement
     Conditional = { link = 'Keyword' },          -- if, then, else, endif, switch, etc.
     Repeat = { link = 'Keyword' },               -- for, do, while, etc.
@@ -47,7 +47,7 @@ return {
     -- Types
     Type = { fg = C.green.bright },              -- Changed to a more vibrant green for better differentiation
     StorageClass = { link = 'Keyword' },         -- static, register, volatile, etc.
-    Structure = { fg = C.purple.bright },        -- struct, union, enum, etc.
+    Structure = { fg = C.blue.contrast },        -- struct, union, enum, etc.
     Typedef = { fg = C.gray.g2 },                -- Changed to gray for better contrast
 
     -- Special symbols
@@ -56,7 +56,7 @@ return {
     -- Class and Object properties
     Class = { fg = C.teal.base },                -- class names
     Property = { fg = C.blue.base },             -- object and class properties
-    Enum = { fg = C.cyan.bright },               -- enumerations
+    Enum = { fg = C.cyan.base },               -- enumerations
     Interface = { fg = C.cyan.bright },          -- Changed to cyan for consistency
     Annotation = { fg = C.cyan.base },           -- annotations in Java or Python
     FunctionCall = { fg = C.green.bright },      -- function calls
