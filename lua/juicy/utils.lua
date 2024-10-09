@@ -98,9 +98,9 @@ function M.hsv_to_rbg(h, s, v)
     return r * 255, g * 255, b * 255
 end
 
-function M.darken(hex, amount, bg) return M.blend(hex, bg or M.bg, math.abs(amount)) end
+function M.darken(hex, amount, bg) return M.blend(hex, bg, math.abs(amount)) end
 
-function M.lighten(hex, amount, fg) return M.blend(hex, fg or M.fg, math.abs(amount)) end
+function M.lighten(hex, amount, bg) return M.blend(hex, bg, math.abs(amount)) end
 
 -- Adapted from @folke/tokyonight.nvim.
 function M.blend(foreground, background, alpha)
