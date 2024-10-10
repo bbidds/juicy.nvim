@@ -68,9 +68,6 @@ local defaults = {
 M.options = defaults
 
 function M.setup(options)
-    -- backwards compatibility
-    options = require('juicy.compatibility')(options)
-
     M.options = vim.tbl_deep_extend('force', M.options or defaults, options or {})
 end
 
