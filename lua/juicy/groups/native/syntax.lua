@@ -10,7 +10,7 @@ return {
     None = { fg = C.none, bg = C.none },
 
     -- Strings and Characters
-    String = { fg = C.white.medium },   -- a string constant: "this is a string"
+    String = { fg = C.green.contrast }, -- a string constant: "this is a string"
     Character = { fg = C.cyan.bright }, -- a character constant: 'c', '\n'
 
     -- Variables
@@ -23,7 +23,7 @@ return {
     Builtin = { fg = C.blue.base },
 
     Identifier = { fg = C.cyan.base }, -- (preferred) any variable name
-    Function = { fg = C.pink.vivid },  -- Changed for better contrast
+    Function = { fg = C.blue.vivid },  -- Changed for better contrast
 
     -- Keywords and Statements
     Keyword = { fg = C.magenta.subtle, bold = O.bold_keywords }, -- Changed to purple for better differentiation
