@@ -164,8 +164,6 @@ function C.extend_palette(style)
     if O.background ~= nil then
         C.bg = O.background
     end
-
-    O.after_pallete(C)
 end
 
 return C
