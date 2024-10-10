@@ -22,8 +22,8 @@ return {
 
     Builtin = { fg = C.blue.base },
 
-    Identifier = { fg = C.cyan.base }, -- (preferred) any variable name
-    Function = { fg = C.blue.vivid },  -- Changed for better contrast
+    Identifier = { fg = C.cyan.base },     -- (preferred) any variable name
+    Function = { fg = C.purple.contrast }, -- Changed for better contrast
 
     -- Keywords and Statements
     Keyword = { fg = C.magenta.subtle, bold = O.bold_keywords }, -- Changed to purple for better differentiation
