@@ -3,13 +3,7 @@ local O = require('juicy.config').options
 local C = require 'juicy.colors.juicy'
 local diff_blend = 0.2
 
--- Modify the palette before generating colors.
-C = O.on_palette(C)
-C.extended = false
-
 local function Juicy(style)
-    C.extended = true
-
     -- Backgrounds
     C.bg = C.black.medium
     C.bg_dark = C.black.darkest
@@ -69,9 +63,6 @@ local function Juicy(style)
 end
 
 local function Nord(style)
-    C.extended = true
-
-
     -- Swap background
     if O.swap_backgrounds then
         C.gray.dull0 = C.black.dark
@@ -139,8 +130,6 @@ function C.extend_palette(style)
     C = O.on_palette(C)
     C.none = "NONE"
 
-    -- Modify the palette before generating colors.
-    O.on_palette(C)
 
     if O.theme == "Nord" then
         Nord()
