@@ -128,43 +128,45 @@ end
 
 function C.extend_palette(style)
     C = O.on_palette(C)
-    C.none = "NONE"
+    if C ~= nil then
+        C.none = "NONE"
 
 
-    if O.theme == "Nord" then
-        Nord()
-    else
-        Juicy()
+        if O.theme == "Nord" then
+            Nord()
+        else
+            Juicy()
+        end
+        -- Swap background
+        if O.swap_backgrounds then
+            C.fg = C.black.dark
+            C.bg = C.gray.dull0
+        end
+
+        -- Define some use cases.
+        -- Some of the format is from @folke/tokyonight.nvim.
+
+        if O.transparent_bg then
+            C.bg = C.none
+            C.bg_dark = C.none
+            C.bg_sidebar = C.none
+            C.bg_popup = C.none
+            C.bg_statusline = C.none
+            C.bg_selected = U.blend(C.gray.dull1, C.black.dark, 0.4)
+        end
+
+        -- Cursorline
+        if O.cursorline.theme == 'light' then
+            C.bg_highlight = U.blend(C.gray.dull2, C.bg, O.cursorline.blend)
+            C.bg_visual = C.bg_highlight
+        end
+
+        if O.background ~= nil then
+            C.bg = O.background
+        end
+
+        O.after_pallete(C)
     end
-    -- Swap background
-    if O.swap_backgrounds then
-        C.fg = C.black.dark
-        C.bg = C.gray.dull0
-    end
-
-    -- Define some use cases.
-    -- Some of the format is from @folke/tokyonight.nvim.
-
-    if O.transparent_bg then
-        C.bg = C.none
-        C.bg_dark = C.none
-        C.bg_sidebar = C.none
-        C.bg_popup = C.none
-        C.bg_statusline = C.none
-        C.bg_selected = U.blend(C.gray.dull1, C.black.dark, 0.4)
-    end
-
-    -- Cursorline
-    if O.cursorline.theme == 'light' then
-        C.bg_highlight = U.blend(C.gray.dull2, C.bg, O.cursorline.blend)
-        C.bg_visual = C.bg_highlight
-    end
-
-    if O.background ~= nil then
-        C.bg = O.background
-    end
-
-    O.after_pallete(C)
 end
 
 -- Sometimes the palette is required before the theme has been loaded,
