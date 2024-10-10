@@ -3,6 +3,8 @@ local O = require('juicy.config').options
 local C = require 'juicy.colors.juicy'
 local diff_blend = 0.2
 
+local M = {}
+
 local function Juicy(style)
     -- Backgrounds
     C.bg = C.black.medium
@@ -168,6 +170,54 @@ function C.extend_palette(style)
         O.after_pallete(C)
     end
 end
+
+function C.build_palette()
+    -- Override all values from the base palette.
+    U.merge_inplace(M, C)
+
+    C = O.on_palette(C)
+    C.none = "NONE"
+
+
+    if O.theme == "Nord" then
+        Nord()
+    else
+        Juicy()
+    end
+    -- Swap background
+    if O.swap_backgrounds then
+        C.fg = C.black.dark
+        C.bg = C.gray.dull0
+    end
+
+    -- Define some use cases.
+    -- Some of the format is from @folke/tokyonight.nvim.
+
+    if O.transparent_bg then
+        C.bg = C.none
+        C.bg_dark = C.none
+        C.bg_sidebar = C.none
+        C.bg_popup = C.none
+        C.bg_statusline = C.none
+        C.bg_selected = U.blend(C.gray.dull1, C.black.dark, 0.4)
+    end
+
+    -- Cursorline
+    if O.cursorline.theme == 'light' then
+        C.bg_highlight = U.blend(C.gray.dull2, C.bg, O.cursorline.blend)
+        C.bg_visual = C.bg_highlight
+    end
+
+    if O.background ~= nil then
+        C.bg = O.background
+    end
+
+    O.after_pallete(C)
+end
+
+-- Build the first palette.
+C.build_palette()
+
 
 -- Sometimes the palette is required before the theme has been loaded,
 -- so we need to extend the palette in those cases. if not C.extended then C.extend_palette() end
