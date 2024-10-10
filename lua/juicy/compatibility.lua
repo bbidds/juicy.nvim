@@ -1,4 +1,4 @@
-local U = require('nordic.utils')
+local U = require('juicy.utils')
 
 local function compatability(options)
     -- All backwards compatibility
