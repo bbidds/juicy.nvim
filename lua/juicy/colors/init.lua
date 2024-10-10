@@ -139,7 +139,7 @@ function C.extend_palette(style)
     C = O.on_palette(C)
     C.none = "NONE"
 
-    if style.theme == "Nord" then
+    if O.theme == "Nord" then
         Nord()
     else
         Juicy()

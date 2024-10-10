@@ -5,6 +5,10 @@ local defaults = {
     on_palette = function(palette)
         return palette
     end,
+    -- This callback can be used to override the colors used in the extended palette.
+    after_palette = function(palette) end,
+    -- This callback can be used to override highlights before they are applied.
+    on_highlight = function(highlights, palette) end,
 
     background = nil,
 
@@ -43,7 +47,7 @@ local defaults = {
         theme = 'dark',
         -- Blending the cursorline bg with the buffer bg.
         blend = 0.6,
-	visual_blend = 0.4,
+        visual_blend = 0.4,
     },
     noice = {
         -- Available styles: `classic`, `flat`.
@@ -66,6 +70,9 @@ local defaults = {
 M.options = defaults
 
 function M.setup(options)
+    -- backwards compatibility
+    options = require('juicy.compatibility')(options)
+
     M.options = vim.tbl_deep_extend('force', M.options or defaults, options or {})
 end
 
