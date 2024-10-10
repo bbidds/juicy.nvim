@@ -102,42 +102,19 @@ function M.darken(hex, amount, bg) return M.blend(hex, bg, math.abs(amount)) end
 
 function M.lighten(hex, amount, bg) return M.blend(hex, bg, math.abs(amount)) end
 
-function M.blend(color1, alpha, color2)
-    -- Ensure the alpha is clamped between 0 and 1
-    alpha = math.max(0, math.min(1, alpha))
+-- Adapted from @folke/tokyonight.nvim.
+function M.blend(foreground, background, alpha)
+    if M.is_none(foreground) or M.is_none(background) then return M.none() end
 
-    -- Convert HEX to RGB
-    local function hex_to_rgb(hex)
-        hex = hex:gsub("#", "")
-        return tonumber(hex:sub(1, 2), 16), tonumber(hex:sub(3, 4), 16), tonumber(hex:sub(5, 6), 16)
+    local fg = { M.hex_to_rgb(foreground) }
+    local bg = { M.hex_to_rgb(background) }
+
+    local blend_channel = function(c_fg, c_bg)
+        local ret = (alpha * c_fg + ((1 - alpha) * c_bg))
+        return math.floor(math.min(math.max(0, ret), 255) + 0.5)
     end
 
-    -- Convert RGB to HEX
-    local function rgb_to_hex(r, g, b)
-        return string.format("#%02x%02x%02x", r, g, b)
-    end
-
-    local r1, g1, b1
-    local r2, g2, b2 = 255, 255, 255 -- Default to white if color2 is not provided
-
-    -- Get RGB values for the first color
-    if color1 then
-        r1, g1, b1 = hex_to_rgb(color1)
-    else
-        return "#ffffff" -- Return white if no color is provided
-    end
-
-    -- If a second color is provided, get its RGB values
-    if color2 then
-        r2, g2, b2 = hex_to_rgb(color2)
-    end
-
-    -- Blend each channel based on the alpha value
-    local r = math.floor((1 - alpha) * r1 + alpha * r2)
-    local g = math.floor((1 - alpha) * g1 + alpha * g2)
-    local b = math.floor((1 - alpha) * b1 + alpha * b2)
-
-    return rgb_to_hex(r, g, b)
+    return M.rgb_to_hex(blend_channel(fg[1], bg[1]), blend_channel(fg[2], bg[2]), blend_channel(fg[3], bg[3]))
 end
 
 return M
