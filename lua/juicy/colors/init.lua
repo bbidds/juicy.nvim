@@ -139,6 +139,9 @@ function C.extend_palette(style)
     C = O.on_palette(C)
     C.none = "NONE"
 
+    -- Modify the palette before generating colors.
+    O.on_palette(C)
+
     if O.theme == "Nord" then
         Nord()
     else
@@ -171,6 +174,8 @@ function C.extend_palette(style)
     if O.background ~= nil then
         C.bg = O.background
     end
+
+    O.after_pallete(C)
 end
 
 -- Sometimes the palette is required before the theme has been loaded,
