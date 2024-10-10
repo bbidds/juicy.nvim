@@ -12,7 +12,6 @@ function M.load(opts)
     end
 
     if opts then C.setup(opts) end
-    require('juicy.colors').build_palette()
 
     -- Apply theme
     require('juicy.colors').extend_palette(C.setup(opts))
