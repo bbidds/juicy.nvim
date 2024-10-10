@@ -66,7 +66,6 @@ local function Juicy(style)
     C.warning = C.warn
     C.hint = C.green.base
     C.info = C.blue.base
-
 end
 
 local function Nord(style)
@@ -133,7 +132,6 @@ local function Nord(style)
     C.warning = C.warn
     C.hint = C.green.vivid
     C.info = C.blue.vivid
-
 end
 
 
@@ -171,7 +169,7 @@ function C.extend_palette(style)
     end
 
     if O.background ~= nil then
-	    C.bg = O.background
+        C.bg = O.background
     end
 end
 
