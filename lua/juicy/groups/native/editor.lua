@@ -55,7 +55,7 @@ local groups = {
     FloatBorder = { fg = C.fg_float_border, bg = C.bg_float_border },
     FloatTitle = { fg = C.yellow.base },
 
-    Pmenu = { bg = C.bg_popup, fg = C.fg_popup },                                          -- Popup menu: normal item.
+    Pmenu = { bg = U.blend(C.bg_popup, 0.20), fg = C.fg_popup },                           -- Popup menu: normal item.
     PmenuSel = { bg = C.bg_selected },                                                     -- Popup menu: selected item.
     PmenuSbar = { bg = C.gray.dull2 },                                                     -- Popup menu: scrollbar.
     PmenuThumb = { bg = C.gray.dull2, fg = C.gray.dull2 },                                 -- Popup menu: Thumb of the scrollbar.
